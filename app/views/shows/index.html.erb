@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies/</h1>
+<h3><%= link_to 'Home', users_path %></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Plot</th>
+      <th>Hd price</th>
+      <th>Sd price</th>
+      <th></th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shows.each do |sh| %>
+      <tr>
+        <td><%= sh.title %></td>
+        <td><%= sh.plot %></td>
+        <td><%= sh.hd_price %></td>
+        <td><%= sh.sd_price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

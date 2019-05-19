@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+<h3><%= link_to 'Home', users_path %></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Plot</th>
+      <th>Hd price</th>
+      <th></th>
+      <th>Sd price</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.plot %></td>
+        <td><%= movie.hd_price %></td>
+        <td><%= link_to 'Buy', :controller => "movies", :action => "purchase", :id => movie.id, :type => VideoQuality::HD %></td>
+        <td><%= movie.sd_price %></td>
+        <td><%= link_to 'Buy', :controller => "movies", :action => "purchase", :id => movie.id, :type => VideoQuality::SD %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
